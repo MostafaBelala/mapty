@@ -6,7 +6,7 @@
 ---> update the workouts ul with a new li with the data extracted from the form
 -> localStorage manipulation
 -> responsive
--> Publish to GitHub
+---> Publish to GitHub & make a Live Demo
 
-Progress: 5 / 8
+Progress: 6 / 8
 DONE [true/false]: false
