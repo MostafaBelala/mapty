@@ -1,0 +1,12 @@
+---> get location and bring it to the first viewport
+---> submit form
+    ---> stitch b/t running, cycling
+---> add a leaflet with title formatted with current date (month day)
+---> hide the form
+---> update the workouts ul with a new li with the data extracted from the form
+-> localStorage manipulation
+-> responsive
+-> Publish to GitHub
+
+Progress: 5 / 8
+DONE [true/false]: false
