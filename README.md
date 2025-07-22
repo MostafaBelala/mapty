@@ -18,6 +18,5 @@
 
 > 🚧 This is a front-end project built for learning purposes. It uses local state and does not persist data after a page reload.
 
-## 🔗 Live Demo
-
-### Check it out here 👉 [Live Demo](https://mostafabelala.github.io/mapty/)
+### 🔗 Live Demo
+Check it out here 👉 [Live Demo](https://mostafabelala.github.io/mapty/)
