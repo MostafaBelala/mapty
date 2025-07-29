@@ -29,6 +29,50 @@
       <div class="sidebar">
         <img src="imgs/logo.png" alt="mapty-logo" class="logo" />
         <ul class="workouts">
+          <form action="" class="form hidden">
+            <div class="form__row">
+              <label class="form__label">type</label>
+              <select
+                id="type"
+                class="form__input form__input--type"
+                name="type"
+              >
+                <option value="running">running</option>
+                <option value="cycling">cycling</option>
+              </select>
+            </div>
+            <div class="form__row">
+              <label class="form__label">distance</label>
+              <input
+                type="text"
+                name="distance"
+                class="form__input form__input--distance"
+                placeholder="km"
+                required
+              />
+            </div>
+            <div class="form__row">
+              <label class="form__label">duration</label>
+              <input
+                type="text"
+                name="duration"
+                class="form__input form__input--duration"
+                placeholder="min"
+                required
+              />
+            </div>
+            <div class="form__row">
+              <label class="form__label traget-label">cadence</label>
+              <input
+                type="text"
+                name="cadence"
+                class="form__input form__input--target"
+                placeholder="steps/min"
+                required
+              />
+            </div>
+            <button type="submit" style="display: none">Send</button>
+          </form>
           <!-- <li class="workout cycling">
             <h3>hello!</h3>
             <div class="activities">
