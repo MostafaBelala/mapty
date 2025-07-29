@@ -20,7 +20,6 @@ body {
 
 .app {
   box-shadow: 0 0 40px rgba(0, 0, 0, 0.337);
-  background-color: red;
   border-radius: 10px;
   overflow: hidden;
 
@@ -141,7 +140,6 @@ footer span {
   background-color: var(--secondary-color) !important;
   border-radius: 5px !important;
   color: var(--main-text-color) !important;
-  border-left: 5px solid var(--cycling-color) !important;
   padding-right: 0.6rem !important;
 }
 
@@ -155,6 +153,14 @@ footer span {
 }
 .leaflet-popup-tip-container {
   z-index: 9 !important;
+}
+
+.running-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid var(--running-color) !important;
+}
+
+.cycling-popup .leaflet-popup-content-wrapper {
+  border-left: 5px solid var(--cycling-color) !important;
 }
 
 .form--hidden {

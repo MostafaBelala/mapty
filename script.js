@@ -1,16 +1,18 @@
 const workouts = document.querySelector(".workouts");
 
 // ! Get the user's current location
-if ("geolocation" in navigator) {
+if (navigator.geolocation) {
   navigator.geolocation.getCurrentPosition(
     function (position) {
-      const lat = position.coords.latitude;
-      const lng = position.coords.longitude;
+      const { latitude } = position.coords;
+      const { longitude } = position.coords;
+
+      const coords = [latitude, longitude];
 
       // -> Initialize the map
       // ^ Create a map instance and set its view to a given place and zoom level
       const map = L.map("map", {
-        center: [lat, lng],
+        center: coords,
         zoom: 13,
         //   zoomControl: true, // Show +/- zoom buttons
         //   scrollWheelZoom: true, // Disable scroll to zoom
@@ -21,13 +23,14 @@ if ("geolocation" in navigator) {
         //   keyboard: true, // Enable keyboard navigation
       });
       // -> Add tile layer (OpenStreetMap)
-      L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
+      L.tileLayer("https://{s}.tile.openstreetmap.fr/hot/{z}/{x}/{y}.png", {
         attribution: "&copy; OpenStreetMap contributors",
       }).addTo(map);
 
       // -> marker mechanism
       const markerMechanism = function () {
         // todo Get the clcked coordinates
+
         map.on("click", function (e) {
           const coords = e.latlng;
 
@@ -77,6 +80,8 @@ if ("geolocation" in navigator) {
 
             workouts.insertAdjacentHTML("afterbegin", html);
 
+            document.querySelector(".form__input--distance").focus();
+
             // todo stitch b/t running, cycling
             document
               .querySelector("select")
@@ -120,16 +125,23 @@ if ("geolocation" in navigator) {
                   day: "numeric",
                 }).format(date);
 
-                var popup = L.popup({
+                const popup = L.popup({
                   content: `${type} on ${formattedDate}`,
                   autoClose: false,
                   closeOnClick: false,
+                  className:
+                    type === "running" ? "running-popup" : "cycling-popup",
                 })
                   .setLatLng(coords)
                   .openOn(map);
 
                 // todo Create a marker at the clicked position
-                L.marker(coords).addTo(map).bindPopup(popup).openPopup();
+                L.marker(coords, {
+                  riseOnHover: true,
+                })
+                  .addTo(map)
+                  .bindPopup(popup)
+                  .openPopup();
 
                 // todo delete the form after submission
                 document.querySelector(".form").remove();
