@@ -287,7 +287,7 @@ class App {
     });
   }
 
-  _reset() {
+  reset() {
     localStorage.removeItem("workouts");
   }
 }
