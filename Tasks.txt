@@ -4,9 +4,9 @@
 ---> add a leaflet with title formatted with current date (month day)
 ---> hide the form
 ---> update the workouts ul with a new li with the data extracted from the form
--> localStorage manipulation
+---> localStorage manipulation
 -> responsive
 ---> Publish to GitHub & make a Live Demo
 
-Progress: 6 / 8
+Progress: 7 / 8
 DONE [true/false]: false
